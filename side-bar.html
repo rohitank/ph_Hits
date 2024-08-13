@@ -1,0 +1,95 @@
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Side Navigation Bar in HTML CSS JavaScript</title>
+    <link rel="stylesheet" href="assets/css/side-bar.css" />
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo_item">
+          <i class="bx bx-menu" id="sidebarOpen"></i>
+          <img src="assets/img/logo.png" alt="phHits Logo"></i>phHits
+        </div>
+        <div class="hdr-left_Container">
+          <div>
+              <h4 id="userName">Melody Ang</h4>
+              <p id="datetime"></p>
+          </div>
+          <button id="signOut"> <img src="./assets/img/logout.png" alt="SignOut Button"></button>
+      </div>
+    </nav>
+
+    <!-- sidebar -->
+    <nav class="sidebar">
+      <div class="menu_content">
+        <ul class="menu_items">
+          <div class="menu_title menu_dahsboard"></div>
+          <li class="item">
+            <a href="dashboard.html" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-home-alt"></i>
+              </span>
+              <span class="navlink">Home</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="menu_items">
+          <div class="menu_title menu_schedule"></div>           
+          <li class="item">
+            <a href="schedule-content.php" class="nav_link" onclick="scheduleContent()">
+              <span class="navlink_icon">
+                <i class="bx bx-cloud-upload"></i>
+              </span>
+              <span class="navlink">Upload Content</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="menu_items">
+          <div class="menu_title menu_livestream"></div>
+          <li class="item">
+            <a href="livestream.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class='bx bxs-video-recording'></i>
+              </span>
+              <span class="navlink">Livestream</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="menu_items">
+            <div class="menu_title menu_history"></div>           
+            <li class="item">
+              <a href="history.php" class="nav_link">
+                <span class="navlink_icon">
+                    <i class='bx bx-history' ></i>
+                </span>
+                <span class="navlink">Recorded Streams</span>
+              </a>
+            </li>
+          </ul>
+
+        <!-- Sidebar Open / Close -->
+        <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Expand</span>
+            <i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Collapse</span>
+            <i class='bx bx-log-out'></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="assets/js/side-bar.js"></script>
+  </body>

@@ -1,0 +1,100 @@
+@font-face {
+    font-family:"Montserrat" ;
+    src: url(/assets/Montserrat-VariableFont_wght.ttf);
+    }
+    
+    *{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    }
+    
+
+    /*--------------------------------------------------------------
+    # Viewers Page
+    --------------------------------------------------------------*/
+    
+    #datetime {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+    margin-top: 10px;
+    }
+    
+    .stream-container {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: linear-gradient(to top, #000000,#031533,#093b8b, #2e4d83, #1a5ac9);
+        font-family: 'Arial', sans-serif;
+        color: #fff; /* Set text color to white for better visibility */
+        align-items: center;
+    }
+    
+    #videoElement{
+        max-width: 1400px;
+        width:100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    #lvContainer{
+        margin:3em 2em 1em 7em;
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+    .stream-info {
+        text-align : center; 
+        margin-top: 20px;
+    
+        
+    }
+    
+    #strm-titls{
+        font-size: 2vw;
+    
+    }
+    #strm-cm{
+        font-size :1vw; 
+    }
+    
+    /*--------------------------------------------------------------
+    # Footer
+    --------------------------------------------------------------*/
+    footer {
+    background-color: #4285F4;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    width:100%;
+    }
+    
+    .footer-icons {
+    display: flex;
+    margin-left: 40px;
+    }
+    
+    .social-icon-container {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-right: 15px;
+    }
+    
+    .social-icon-container img {
+    width: 30px;
+    height: 30px;
+    }
+    
+    .footer-text {
+    text-align: right;
+    }
+

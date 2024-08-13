@@ -1,0 +1,139 @@
+@font-face {
+    font-family:"Montserrat" ;
+    src: url(/assets/Montserrat-VariableFont_wght.ttf);
+  }
+
+*{
+    margin: 0; 
+    font-family: "Montserrat";
+}
+/*--------------------------------------------------------------
+# Dashboard
+--------------------------------------------------------------*/
+.dashboard{
+    margin: 3vh 3% 4vh 3%
+}
+.currentStream{
+    padding-bottom: 5vh;
+}
+.currentStream h2{
+    margin-left: 12%;
+}
+#stream-container{
+    margin: 2%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+#strm-vid{
+  width: 80%;
+  max-width: 1400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#stream-container div{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.nextStream{
+    margin-right: 12%;
+    margin-left: 12%;
+}
+#nxt-hdr{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3%;
+}
+
+#nxt-hdr h2{
+    margin: 0; 
+}
+  
+  .strm-queue{
+    display: flex;
+    flex-direction: row;
+    gap: 3vh; 
+   
+  }
+  .strm-queue-item{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .strm-queue-item img{
+    width: 100%; 
+    max-width: 205px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+header {
+    position: relative;
+    height: 60px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid #E3E3E3;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 2%;
+  }
+  .logo span{
+    font-size: 2vh;
+    color: black;
+    font-weight: 700;
+  }
+  .logo img{
+    height: 40px;
+    width: 30px;
+    margin-right: 6px;
+  
+  }
+  .hdr-left_Container{
+    display:grid;
+    grid-template-columns: 1fr 50px;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px
+  }
+  
+  .hdr-left_Container div{
+    text-align: right;
+  }
+  
+  #userName{
+    margin-bottom:0;
+  }
+  
+  #datetime{
+    margin-top:0;;
+  }
+  
+  #signOut{
+    height: 40px;
+    width: 40px;
+    border: none;
+    background:none;
+  }
+  
+  #signOut img{
+    height: 40px;
+    width: 40px
+  }
+  

@@ -1,0 +1,215 @@
+@font-face {
+  font-family:"Montserrat" ;
+  src: url(assets/Montserrat-VariableFont_wght.ttf);
+}
+
+*{
+  font-family: 'Montserrat', sans-serif;
+  margin:0;
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# HISTORY
+--------------------------------------------------------------*/
+.history{
+margin: 5em;
+}
+.pagetitle {
+  margin-bottom: 10px;
+}
+
+.pagetitle h1 {
+  margin-left: 0.5em;
+  font-size: 30px;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+video {
+  width: 700px;
+}
+
+#media-container {
+  padding:  50px 0px 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*--------------------------------------------------------------
+# History Controls 
+--------------------------------------------------------------*/
+.hist-controls{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.5fr;
+  gap:10px; 
+  justify-content: space-around;
+  margin-left: 1em;
+}
+/*SEARCH BAR*/
+  .search-form input {
+  border: 0;
+  font-size: 14px;
+  color: black;
+  border: 1px solid rgba(1, 41, 112, 0.2);
+  padding: 7px 38px 7px 8px;
+  border-radius: 3px;
+  transition: 0.3s;
+  width: 30vw;
+ 
+}
+
+.search-form input:focus,
+.search-form input:hover {
+  outline: none;
+  box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.15);
+  border: 1px solid rgba(1, 41, 112, 0.3);
+ 
+}
+
+ .search-form button {
+  border: 0;
+  padding: 0;
+  margin-left: -30px;
+  background: #D9D9D9;
+}
+
+/*DATE*/
+.hist-date{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.hist-date label{
+ padding: 7px;
+}
+
+.hist-date input{
+  width: 100%;
+  padding:7px;
+  outline: none;
+  border: 1px solid rgba(1, 41, 112, 0.2);
+  border-radius: 3px;
+
+}
+#filterButton{
+  padding:7px; 
+  border-radius: 2px;
+  transition: 0.3s;
+  border: 1px solid rgba(1, 41, 112, 0.2);
+}
+#filterButton:hover{
+  color:white;
+  background-color: black;
+}
+
+
+/*SORT*/
+
+.sel-hs-sort{
+  width: 100%;
+  padding:7px;
+  outline: none;
+  border: 1px solid rgba(1, 41, 112, 0.2);
+  border-radius: 3px;
+  
+}
+
+/*--------------------------------------------------------------
+# History Records
+--------------------------------------------------------------*/
+#hist-container{
+margin: 1em 0 1em 1em;
+display:flex;
+flex-direction: column;
+justify-content: center;
+gap:10px;
+}
+
+.stream{
+display: flex;
+border: 1px solid rgba(1, 41, 112, 0.1);
+border-radius:  6px;
+box-shadow: 0 0 10px 0 rgba(117, 120, 124, 0.1);
+padding: 7px;
+justify-content: space-between;
+transition: 0.35s;
+align-items: center;
+}
+.stream:hover{
+outline: none;
+  box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.05);
+  border: 1px solid rgba(1, 41, 112, 0.2);
+}
+.strm-date{
+font-weight: 500;
+margin-left: 3vh;
+}
+
+.stream button{
+background:none;
+border-radius: 50px;
+border: 1px solid rgba(1, 41, 112, 0.2);
+font-size: 15px;
+width:150px;
+height:35px;
+text-align: left;
+transition: 0.3s;
+letter-spacing: 1px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 5px;
+margin-right: 3vh;
+
+}
+
+.stream button:hover{
+outline: none;
+border:none;
+background-color:#4070f4;
+color: white;
+}
+
+/*--------------------------------------------------------------
+# PREVIEW PAGE
+--------------------------------------------------------------*/
+#preview{
+justify-content: center;
+align-items: center;
+}
+#prev-container{
+display:flex;
+justify-content: space-between;
+align-items: center;
+margin-left:13%;
+margin-right:13%;
+margin-top:3%;
+}
+#date{
+font-size:1.5rem;
+}
+#prev-container a{
+text-decoration: none;
+color: black;
+font-size: 1rem;
+}
+
+.vid-container{
+margin-left: 4%;
+margin-top:2%;
+margin-right:4%;
+margin-bottom: 2%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.vid-container video{
+width: 80%;
+max-width: 1400px;
+height: auto;
+display: block;
+margin: 0 auto;
+}
+

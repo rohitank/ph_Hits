@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>phHits - Admin</title>
+        <!-- Template Main CSS File -->
+        <link href="assets/css/admin.css" rel="stylesheet">
+        <link href="assets/css/header.css" rel="stylesheet">
+        <link href="assets/css/side-bar.css" rel="stylesheet">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+        <!-- Boxicons CSS -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/css/admin.css" />
+        <!-- DataTables JS -->
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+        <!-- Admin Page JavaScript -->
+        <script src="assets/js/admin.js"></script>
+        <script src="asssets/js/side-bar.js"></script>
+
+
+      
+    </head>
+
+    <body>
+        <div id="mySidebar" class="sidebar close">
+                <div class="logo_items flex">
+                    <span class="nav_image">
+                    <img src="assets/img/logo.png" alt="logo_img" />
+                    </span>
+                    <span class="logo_name">Cheers</span>
+                </div>
+                <div class="menu_container">
+                    <div class="menu_items">
+                    <ul class="menu_item">
+                    <div class="menu_title flex">
+                        <span class="title">Account Settings</span>
+                        <span class="line"></span>
+                    </div>
+                    <li class="item">
+                        <a href="#manage-accounts-section" class="link flex">
+                        <i class="bx bxs-user-account"></i>
+                        <span>Manage Accounts</span>
+                        <i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#add-account-section" class="link flex">
+                        <i class="bx bx-user-plus"></i>
+                        <span>Add an Account</span>
+                        <i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                    </li>
+                    </div>
+                </div>
+        </div>
+          <div id="main">
+              <div id="content">
+                     <!-- header -->
+                      <nav class="header">
+                        <a href="index.html" class="logo">
+                            <img src="assets/img/logo.png" alt="logo_img" />
+                        </a>
+                      
+                        <div class="hdr-left_Container">
+                        <div>
+                            <h4 id="userName" action="/getUserName"></h4>
+                            <p id="datetime"></p>
+                        </div>
+                        <a href="#" id="sign-out-button" action="/logout">
+                            <img src="./assets/img/logout.png" alt="SignOut Button" id="signOutImage">
+                        </a>
+                        </div>
+                    </nav>
+        
+
+                    <!-- JavaScript -->
+                    <script src="assets/js/side-bar.js"></script>
+
+                    <div class="page-title" id="manage-accounts-section">
+                        <h1>Manage Accounts</h1>
+                        <p>Edit, delete, disable or enable existing content manager accounts</p>
+                    </div>
+                    <div class="content-managers-container" >        
+                        <h1>Existing Content Managers</h1>
+                        
+                        <table id="sample_data">
+                            <thead>
+                                <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablebody">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="overlay"></div>
+
+                    <div class="edit-popup">
+                        <div class="edit-popup-content">
+                            <div class="edit-header-popup">
+                                <h2>Edit Account</h2>
+                                <img src="assets/svg/close-icon.svg" alt="close icon image" id="edit-close-popup">
+                            </div>
+                            <form>
+                                <div class="edit-popup-firstname-container">
+                                    <label for="edit-admin-firstname">First Name</label>
+                                    <input type="text" id="edit-admin-firstname" name="edit-firstname" required>
+                                </div>
+
+                                <div class="edit-popup-lastname-container">
+                                    <label for="edit-admin-lastname">Last Name</label>
+                                    <input type="text" id="edit-admin-lastname" name="edit-lastname" required>
+                                </div>
+
+                                <div class="edit-popup-username-container">
+                                    <label for="edit-admin-username">Username</label>
+                                    <input type="text" id="edit-admin-username" name="edit-username" disabled>
+                                </div>
+
+                                <div class="edit-popup-password-container">
+                                    <label for="edit-admin-password">Password</label>
+                                    <input type="password" id="edit-admin-password" name="edit-password" required>
+                                </div>
+                            
+                                <button type="button" id="save-changes">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="delete-popup">
+                        <div class="delete-popup-content">
+                            <div class="delete-header-popup">
+                                <h2>Delete Account</h2>
+                                <img src="assets/svg/close-icon.svg" alt="close icon image" id="delete-close-popup">
+                            </div>
+
+                            <div class="delete-content-container">
+                                <p>Are you sure you want to delete this user from your list of existing content managers?</p>
+                    
+                                <div class="delete-button-container">
+                                    <button type="button" id="confirm-button">Yes</button>
+                                    <button type="button" id="cancel-button">No</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="add-account-title" id="add-account-section">
+                        <h1>Add an Account</h1>
+                        <p>Create a new content manager account</p>
+                    </div>
+
+                    <div class="add-account-container" >
+                        <div class="add-account-1st-column">
+                            <form id="create-account-form" action="/create-account" method="POST">
+                                <div class="admin-page-firstname-container">
+                                    <label for="admin-first-name">First Name</label>
+                                    <input type="text" id="admin-first-name" name="firstName" required>
+                                </div>
+
+                                <div class="admin-page-lastname-container">
+                                    <label for="admin-last-name">Last Name</label>
+                                    <input type="text" id="admin-last-name" name="lastName" required>
+                                </div>
+
+                                <div class="admin-page-username-container">
+                                    <label for="admin-username">Username</label>
+                                    <input type="text" id="admin-username" name="username" autocomplete="username" required>
+                                </div>
+
+                                <div class="admin-page-password-container">
+                                    <label for="admin-password">Password</label>
+                                    <input type="password" id="admin-password" name="password" required>
+                                </div>
+                            
+                                <button type="submit">Create Account</button>
+                            </form>
+                        </div>
+
+                        <div class="add-account-2nd-column">
+                            <img src="assets/img/admin-page-instruments.png" alt="Instruments Image">
+                        </div>
+
+                    </div>
+
+                    <div id="create-success-popup">
+                        <div class="create-success-popup-content">
+                            <div class="create-account-header-popup">
+                                <img src="assets/svg/close-icon.svg" alt="close icon image" id="create-account-close-popup">
+                            </div>
+                            <div class="create-account-content-container">
+                                <h1>New account is successfully created!</h1>
+                                <img src="assets/img/checked-icon.png" alt="checked icon image" id="check-icon">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="username-exist-popup">
+                        <div class="username-exist-popup-content">
+                            <div class="username-exist-header-popup">
+                                <img src="assets/svg/close-icon.svg" alt="close icon image" id="username-exist-close-popup">
+                            </div>
+                            <div class="username-exist-content-container">
+                                <h1>Username already exist!</h1>
+                                <img src="assets/img/warning-icon.png" alt="warning icon image" id="username-exist-icon">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <footer>
+                        <div class="footer-icons">
+                            <div class="social-icon-container">
+                                <a href="#"><img src="assets/img/facebook-logo.png" alt="Social Icon 1"></a>
+                            </div>
+                    
+                            <div class="social-icon-container">
+                                <a href="#"><img src="assets/img/instagram-logo.png" alt="Social Icon 2"></a>
+                            </div>
+                    
+                            <div class="social-icon-container">
+                                <a href="#"><img src="assets/img/twitter-logo.png" alt="Social Icon 3"></a>
+                            </div>
+                        </div>
+                    
+                        <div class="footer-text">
+                            Team phHITS - 9481AB - IT312/312L - 1st Semester AY 2023 - 2024<br>
+                            IT Department<br>
+                            School of Accountancy, Management, Computing and Information Studies<br>
+                            Saint Louis University
+                        </div>
+                    </footer>
+                </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,145 @@
+@font-face {
+  font-family:"Montserrat" ;
+  src: url(/assets/Montserrat-VariableFont_wght.ttf);
+}
+
+*{
+  font-family: "Montserrat";
+}
+
+/*--------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
+
+.errorNotification {
+  padding: 10px;
+  background-color: red; /* Red for error */
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+
+body {
+  background: linear-gradient(to top, #000000,#031533,#093b8b, #2e4d83, #1a5ac9);
+}
+
+.logo {
+  color: #fff;
+}
+
+/* Notification Styles */
+.notification {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #ff6347;
+  color: #fff;
+  z-index: 9999;
+}
+
+/* Style the login form */
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 35px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #4285F4;
+  width: 50%;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Style the phrases underneath the form */
+form p {
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.text-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 60PX; 
+  margin-right: 10px; /* Add some space between the logo and text */
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  body {
+      padding-top: 20px;
+  }
+  form {
+      width: 100%;
+      padding: 50px; 
+  }
+  .btn-info {
+      width: 100%;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+  }
+  .col-sm-6 {
+      order: 2;
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer {
+  background-color: #4285F4;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  width:100%;
+}
+
+.footer-icons {
+  display: flex;
+  margin-left: 40px;
+}
+
+.social-icon-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.social-icon-container img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-text {
+  text-align: right;
+}

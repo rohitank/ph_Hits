@@ -1,0 +1,470 @@
+@font-face {
+  font-family:"Montserrat" ;
+  src: url(/assets/Montserrat-VariableFont_wght.ttf);
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+/*--------------------------------------------------------------
+# Admin Page
+--------------------------------------------------------------*/
+.page-title, .add-account-title {
+  margin: 7em 0 1em 7em;
+  padding-top:10px;
+}
+
+.page-title h1, .add-account-title h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 6px;
+ 
+}
+
+.page-title p, .add-account-title p {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.content-managers-container {
+  background-color: #f3f3f3;
+  padding: 3em;
+  margin: 0 5em 5em 5em;
+  text-align: center;
+}
+
+.content-managers-container h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.table-headers {
+  display: flex;
+  gap: 20em;
+  justify-content: center;
+}
+
+.table-headers h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0 20px;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 30px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr {
+  background-color: white;
+}
+
+td:first-child {
+  border-top-left-radius: 10px;  
+  border-bottom-left-radius: 10px; 
+}
+
+td.button-container {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.edit-button, .delete-button, .enable-disable-button {
+  background-color: #4285F4;
+  color: white;
+  margin: 0 10px 0 20px ;
+  padding: 5px 40px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.enable-disable-button{
+  background-color: #4285F4;
+}
+
+.enable-disable-button{
+  border: 1px solid #4285F4;
+  background-color: #fff;
+  color: #4285F4;
+}
+
+.delete-button:hover {
+  border: 1px solid #EA4335;
+  background-color: #fff;
+  color: #EA4335;
+}
+
+.enable-disable-button:hover{
+  border: 1px solid #EA4335;
+  background-color: #fff;
+  color: #EA4335;
+}
+
+.add-account-container {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #f3f3f3;
+  padding: 5em;
+  margin: 0 5em 5em 5em;
+}
+.add-account-1st-column {
+  width: 100%;
+}
+
+.add-account-1st-column form, .admin-page-firstname-container,
+.admin-page-lastname-container,  .admin-page-username-container,
+.admin-page-password-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-account-1st-column form {
+  font-size: 20px;
+  font-weight: 700;
+  gap: 1em;
+}
+
+.add-account-1st-column input {
+  width: 40em;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: rgb(211, 211, 211);
+}
+
+.add-account-1st-column button {
+  background-color: #4285F4;
+  color: white;
+  padding: 20px 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 20em;
+  cursor: pointer;
+}
+
+.admin-page-firstname-container label, .admin-page-lastname-container label,
+.admin-page-username-container label, .admin-page-password-container label {
+  padding-bottom: 1em;
+}
+
+.add-account-2nd-column {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+img[alt="Instruments Image"] {
+  max-width: 800px;
+}
+
+/* For Popups Background */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+/*--------------------------------------------------------------
+# Admin Page Edit Popup
+--------------------------------------------------------------*/
+
+.edit-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.edit-popup-content {
+  height: 500px;
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+
+.edit-header-popup {
+  display: flex;
+}
+
+.edit-header-popup h2 {
+  margin: 1em;
+}
+
+#edit-close-popup{
+  max-width: 30px;
+  margin-left: 230px;
+  cursor: pointer;
+}
+
+.edit-popup-firstname-container, .edit-popup-lastname-container,
+.edit-popup-username-container, .edit-popup-password-container {
+  padding: 10px 0 5px 60px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.edit-popup-firstname-container input, .edit-popup-lastname-container input,
+.edit-popup-username-container input, .edit-popup-password-container input {
+  width: 27em;
+  height: 25px;
+  border-radius: 7px;
+  margin-top: 10px;
+  border-color: #dbdbdb;
+}
+
+.edit-popup-content button {
+  margin: 2em 0 0 125px;
+  background-color: #4285F4;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 15em;
+
+}
+
+/*--------------------------------------------------------------
+# Admin Page Delete Popup
+--------------------------------------------------------------*/
+.delete-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.delete-popup-content {
+  height: 300px;
+  width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+
+.delete-header-popup {
+  display: flex;
+}
+
+.delete-header-popup h2 {
+  margin: 1em 1em 1em 2em;
+}
+
+#delete-close-popup {
+  max-width: 30px;
+  margin-left: 250px;
+  cursor: pointer;
+}
+
+.delete-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+}
+
+.delete-content-container p {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 50px 0 50px;
+}
+
+.delete-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  gap: 20px;
+}
+
+#confirm-button, #cancel-button {
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 7px 40px;
+}
+
+#cancel-button {
+  background-color: #EA4335;
+}
+
+/*--------------------------------------------------------------
+# Admin Page Create Account Popup
+--------------------------------------------------------------*/
+#create-success-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.create-success-popup-content {
+  height: 400px;
+  width: 600px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.create-account-header-popup {
+  display: flex;
+  justify-content: flex-end;
+  margin: 3em 0 1em 0;
+  font-size: 13px;
+}
+
+#create-account-close-popup {
+  max-width: 30px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.create-account-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 1em;
+  font-size: 15px;
+}
+
+#check-icon {
+  max-width: 80px;
+}
+
+/*--------------------------------------------------------------
+# Admin Page Username Exist Popup
+--------------------------------------------------------------*/
+#username-exist-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.username-exist-popup-content {
+  height: 300px;
+  width: 600px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.username-exist-header-popup {
+  display: flex;
+  justify-content: flex-end;
+  margin: 3em 0 1em 0;
+  font-size: 13px;
+}
+
+#username-exist-close-popup {
+  max-width: 30px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.username-exist-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 1em;
+  font-size: 15px;
+}
+
+#username-exist-icon {
+  max-width: 80px;
+}
+#sign-out-button{
+  height: 40px;
+width: 40px;
+border: none;
+background:none;
+transition: 0.3s;
+}
+#sign-out-button:hover{
+  transform: translateX(5px);
+}
+
+#sign-out-button img{
+height: 40px;
+width: 40px
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer {
+  background-color: #4285F4;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  width:100%;
+}
+
+.footer-icons {
+  display: flex;
+  margin-left: 40px;
+}
+
+.social-icon-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.social-icon-container img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-text {
+  text-align: right;
+}

@@ -1,0 +1,84 @@
+.header {
+    position: relative;
+    height: 60px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid #E3E3E3;
+}
+.logo {
+display: flex;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+padding-left: 2%;
+}
+.logo span{
+font-size: 2vh;
+color: black;
+font-weight: 700;
+}
+.logo img{
+height: 40px;
+width: 8vw;
+margin-right: 6px;
+
+}
+.hdr-left_Container{
+display:grid;
+grid-template-columns: 1fr 50px;
+gap:10px;
+justify-content: center;
+align-items: center;
+padding-bottom: 10px
+}
+
+.hdr-left_Container div{
+text-align: right;
+}
+
+#userName{
+margin-bottom:0;
+font-size: 1em;
+}
+
+#datetime{
+margin:0;
+font-size: 1em;
+
+}
+
+#signOut{
+height: 40px;
+width: 40px;
+border: none;
+background:none;
+transition: 0.3s;
+}
+
+
+#signOut:hover{
+    transform: translateX(5px);
+}
+
+#sign-out-button{
+    height: 40px;
+width: 40px;
+border: none;
+background:none;
+transition: 0.3s;
+}
+#sign-out-button:hover{
+    transform: translateX(5px);
+}
+
+#signOut img{
+height: 40px;
+width: 40px
+}
+#sign-out-button img{
+    height: 40px;
+    width: 40px
+}

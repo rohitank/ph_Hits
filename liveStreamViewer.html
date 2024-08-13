@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phHits Stream</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/viewers.css" type="text/css">
+    <!-- <link rel="stylesheet" href="assets/css/side-bar.css" /> -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <!-- Admin Page JavaScript -->
+    <script src="assets/js/viewers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</head>
+<body>
+
+    <div id="main">
+        <div id="content">
+            <!-- header -->
+                <nav class="header">
+                    <a href="liveStreamViewer.html" class="logo">
+                    <img src="assets/img/logo.png" alt="logo_img" />
+                    </a>
+
+                    <div class="hdr-left_Container">
+                    <div>
+                        
+                        <p id="datetime"></p>
+                    </div>
+                    </div>
+                </nav>
+
+                <div class="stream-container">
+                    <div id="livestreamCont">
+                        <div id = "lvContainer">
+                            <img id="videoElement"></img>
+                        </div>
+                        <div class="stream-info">
+                            <h1 id="strm-title"></h1>
+                            <h2 id="strm-cm"></h2>
+                        </div>
+                    </div>
+                    <div id="recordedCont">
+                        <video autoplay muted id="strm-vid"></video>
+                        <div class="prerecorded-stream-info">
+                            <h1 id="prerecorded-title"></h1>
+                            <h2 id="prerecorded-cm"></h2>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <script>
+                        const videoElement = document.getElementById('videoElement');
+                        const ws = new WebSocket('ws://localhost:8081'); // Change with your IP address
+
+                     
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('GET', 'getLivestreamInfo.php', true);
+
+                        xhr.onreadystatechange = function () {
+                            if (xhr.readyState === XMLHttpRequest.DONE) {
+                                if (xhr.status === 200) {
+                                    const response = JSON.parse(xhr.responseText);
+                                    if (response.error && response.error === 'No active livestream') {
+                                        switchStreamView(false);
+                                        
+                                    } else {
+                                        switchStreamView(true);
+                                        console.log(xhr.responseText);
+                                        const { title, description } = JSON.parse(xhr.responseText);
+                                        document.getElementById('strm-title').textContent = title;
+                                        document.getElementById('strm-cm').textContent = description;
+                                    }
+                                } else {
+                                    alert('There is no content playing right now!');
+                                }
+                            }
+                        };
+
+                        xhr.onerror = function (error) {
+                            console.error('XHR error:', error);
+                        };
+
+                        xhr.send();
+
+                        ws.onmessage = (event) => {
+                            if (event.data instanceof Blob) {
+                                const videoBlob = event.data;
+                                const videoURL = URL.createObjectURL(videoBlob);
+                                videoElement.src = videoURL;
+                            }
+                        };
+
+                        ws.onerror = (error) => {
+                            console.error('WebSocket error:', error);
+                        };
+
+                function switchStreamView(isLiveStream) {
+                    const liveStreamElements = document.querySelectorAll('#videoElement, #strm-title, #strm-cm');
+                    const prerecordedVideoElements = document.querySelectorAll('#strm-vid, #prerecorded-title, #prerecorded-cm');
+
+                    if (isLiveStream) {
+                        liveStreamElements.forEach(element => element.style.display = 'block');
+                        prerecordedVideoElements.forEach(element => element.style.display = 'none');
+
+                    } else {
+                        liveStreamElements.forEach(element => element.style.display = 'none');
+                        prerecordedVideoElements.forEach(element => element.style.display = 'block');
+                        
+                    }
+                }
+                    </script>
+                
+                <footer>
+                    <div class="footer-icons">
+                        <div class="social-icon-container">
+                            <a href="#"><img src="assets/img/facebook-logo.png" alt="Social Icon 1"></a>
+                        </div>
+                
+                        <div class="social-icon-container">
+                            <a href="#"><img src="assets/img/instagram-logo.png" alt="Social Icon 2"></a>
+                        </div>
+                
+                        <div class="social-icon-container">
+                            <a href="#"><img src="assets/img/twitter-logo.png" alt="Social Icon 3"></a>
+                        </div>
+                    </div>
+                
+                    <div class="footer-text">
+                        Team phHITS - 9481AB - IT312/312L - 1st Semester AY 2023 - 2024<br>
+                        IT Department<br>
+                        School of Accountancy, Management, Computing and Information Studies<br>
+                        Saint Louis University
+                    </div>
+                </footer><!-- End Footer -->
+
+        </div>
+    </div>
+</body>
+</html>

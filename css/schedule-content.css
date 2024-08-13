@@ -1,0 +1,325 @@
+@font-face {
+    font-family:"Montserrat" ;
+    src: url(/assets/Montserrat-VariableFont_wght.ttf);
+  }
+  
+  *{
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+header {
+    position: relative;
+    height: 100px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid #E3E3E3;
+}
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 2%;
+  }
+  .logo span{
+    font-size: 2vh;
+    color: black;
+    font-weight: 700;
+  }
+  .logo img{
+    height: 40px;
+    width: 30px;
+    margin-right: 6px;
+  
+  }
+  
+  .status-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.queued {
+    background-color: orange;
+}
+
+.success {
+    background-color: green;
+}
+
+/*--------------------------------------------------------------
+# Stream Content
+--------------------------------------------------------------*/
+.page-title, .add-account-title {
+    margin: 3em 0 1em 7em;
+}
+  
+.page-title h1, .add-account-title h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+  
+.page-title p, .add-account-title p {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+}
+  
+.content-managers-container {
+    background-color: #f3f3f3;
+    padding: 3em;
+    margin: 0 5em 5em 5em;
+    text-align: center;
+}
+  
+.content-managers-container h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+  
+.table-headers {
+    display: flex;
+    gap: 20em;
+    justify-content: center;
+}
+  
+.table-headers h5 {
+    font-size: 16px;
+    font-weight: 600;
+}
+  
+table {
+    width: 100%;
+    border-spacing: 0 20px;
+    margin-top: 20px;
+}
+  
+th, td {
+    padding: 30px;
+    text-align: center;
+}
+  
+th {
+    background-color: #f2f2f2;
+}
+  
+tr {
+    background-color: white;
+}
+  
+td:first-child {
+    border-top-left-radius: 10px;  
+    border-bottom-left-radius: 10px; 
+}
+  
+td.button-container {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+  
+.edit-button, .delete-button {
+    background-color: #4285F4;
+    color: white;
+    margin: 0 10px 0 20px ;
+    padding: 5px 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+  
+.delete-button {
+    background-color: #EA4335;
+}
+
+/*--------------------------------------------------------------
+# Rechedule Stream
+--------------------------------------------------------------*/
+.content-reschedule-container {
+    width: 80%;
+    margin: auto; /* Center the form horizontally */
+    margin-bottom: 20px; /* Add margin between forms */
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-buttons {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+
+}
+
+.form-group.file-input-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.file-input-group label {
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Adjust the width of the text input */
+#title {
+    width: 70%; 
+    box-sizing: border-box; 
+}
+
+#description {
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+textarea {
+    resize: vertical; 
+}
+
+/* Add styles for character count */
+.character-count {
+    color: #777;
+    font-size: 12px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/*--------------------------------------------------------------
+# Schedule Stream
+--------------------------------------------------------------*/
+.schedule-stream-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px; /* Add margin between forms */
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjust the width of the text input */
+#Title {
+    width: 70%; 
+    box-sizing: border-box; 
+}
+
+#Description {
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+textarea {
+    resize: vertical; 
+}
+
+/* Add styles for character count */
+.character-count {
+    color: #777;
+    font-size: 12px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+.logo_item {
+    display: flex;
+    align-items: center;
+}
+
+.logo_item i {
+    margin-right: 10px;
+}
+
+.hdr-left_Container {
+    display: none;
+}
+
+.navbar {
+    padding: 10px;
+}
+
+.sidebar {
+    width: 100%;
+    left: 0;
+    background-color: #333;
+}
+
+.bottom_content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom_content .bottom {
+    flex-basis: 48%;
+}
+}
